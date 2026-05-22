@@ -1,24 +1,22 @@
 export default function DashboardCards() {
+  const cards = [
+    { title: "Total Spend", value: "₹45,000" },
+    { title: "Food", value: "₹12,000" },
+    { title: "Savings", value: "₹8,500" },
+    { title: "Transport", value: "₹5,000" },
+  ];
+
   return (
-    <div className="grid md:grid-cols-3 gap-6">
-
-      <div className="bg-zinc-900 p-6 rounded-xl">
-        <h2>Total Spend</h2>
-        <p className="text-3xl mt-2">₹12500</p>
-      </div>
-
-      <div className="bg-zinc-900 p-6 rounded-xl">
-        <h2>Active Services</h2>
-        <p className="text-3xl mt-2">8</p>
-      </div>
-
-      <div className="bg-zinc-900 p-6 rounded-xl">
-        <h2>Potential Savings</h2>
-        <p className="text-3xl mt-2 text-green-400">
-          ₹3500
-        </p>
-      </div>
-
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      {cards.map((card, index) => (
+        <div
+          key={index}
+          className="bg-white p-5 rounded-xl shadow hover:scale-105 transition"
+        >
+          <h3 className="text-gray-500">{card.title}</h3>
+          <p className="text-2xl font-bold">{card.value}</p>
+        </div>
+      ))}
     </div>
   );
 }

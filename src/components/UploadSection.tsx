@@ -1,47 +1,36 @@
-export default function UploadSection() {
-  return (
-    <div className="bg-zinc-900 mt-10 p-8 rounded-xl">
+"use client";
 
-      <h2 className="text-2xl font-bold mb-5">
-        Start Your AI Audit
+import { useState } from "react";
+
+export default function UploadSection() {
+  const [loading, setLoading] = useState(false);
+
+  const handleAnalyze = () => {
+    setLoading(true);
+
+    setTimeout(() => {
+      setLoading(false);
+      alert("Analysis completed!");
+    }, 2000);
+  };
+
+  return (
+    <div className="bg-white p-6 rounded-xl shadow">
+      <h2 className="text-xl font-bold mb-4">
+        Upload Bank Statement
       </h2>
 
-      <div className="grid gap-4">
+      <input
+        type="file"
+        className="border p-2 rounded w-full"
+      />
 
-        <input
-          type="text"
-          placeholder="Tool (ChatGPT, Claude, Cursor...)"
-          className="p-3 rounded bg-black border border-gray-700"
-        />
-
-        <input
-          type="number"
-          placeholder="Monthly Spend ($)"
-          className="p-3 rounded bg-black border border-gray-700"
-        />
-
-        <input
-          type="number"
-          placeholder="Team Size"
-          className="p-3 rounded bg-black border border-gray-700"
-        />
-
-        <select
-          className="p-3 rounded bg-black border border-gray-700"
-        >
-          <option>Coding</option>
-          <option>Writing</option>
-          <option>Research</option>
-          <option>Data</option>
-          <option>Mixed</option>
-        </select>
-
-        <button className="bg-blue-600 p-3 rounded">
-          Generate Audit
-        </button>
-
-      </div>
-
+      <button
+        onClick={handleAnalyze}
+        className="bg-blue-500 text-white px-4 py-2 rounded mt-4"
+      >
+        {loading ? "Analyzing..." : "Analyze Spending"}
+      </button>
     </div>
   );
 }

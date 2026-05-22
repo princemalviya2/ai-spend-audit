@@ -1,25 +1,25 @@
+import SpendingChart from "../components/SpendingChart";
 import DashboardCards from "../components/DashboardCards";
 import UploadSection from "../components/UploadSection";
 import Recommendations from "../components/Recommendations";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black text-white p-10">
+    <main className="min-h-screen p-6 bg-gray-100">
+      <h1 className="text-3xl font-bold mb-6">
+        AI Spend Audit Dashboard
+      </h1>
 
-      <div className="text-center mb-10">
-        <h1 className="text-5xl font-bold">
-          AI Spend Audit
-        </h1>
+      <UploadSection />
 
-        <p className="text-gray-400">
-          Analyze and optimize AI spending
-        </p>
+      <div className="mt-6">
+        <DashboardCards />
       </div>
 
-      <DashboardCards />
-      <UploadSection />
-      <Recommendations />
-
+      <div className="mt-6">
+        <SpendingChart />
+        <Recommendations />
+      </div>
     </main>
   );
 }

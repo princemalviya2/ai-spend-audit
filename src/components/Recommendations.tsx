@@ -1,31 +1,27 @@
 export default function Recommendations() {
+  const tips = [
+    "Reduce food spending by 10%",
+    "Increase monthly savings by ₹2000",
+    "Avoid unnecessary subscriptions",
+    "Track daily expenses regularly",
+  ];
+
   return (
-    <div className="grid md:grid-cols-2 gap-6 mt-10">
+    <div className="bg-white p-6 rounded-xl shadow mt-6">
+      <h2 className="text-xl font-bold mb-4">
+        AI Recommendations
+      </h2>
 
-      <div className="bg-zinc-900 p-6 rounded-xl">
-        <h2 className="text-2xl font-bold mb-4">
-          Recent Activity
-        </h2>
-
-        <ul className="space-y-3">
-          <li> OpenAI API usage updated</li>
-          <li> High usage detected</li>
-          <li> Spend increased by 12%</li>
-        </ul>
+      <div className="space-y-3">
+        {tips.map((tip, index) => (
+          <div
+            key={index}
+            className="bg-blue-50 p-3 rounded-lg border-l-4 border-blue-500"
+          >
+            {tip}
+          </div>
+        ))}
       </div>
-
-      <div className="bg-zinc-900 p-6 rounded-xl">
-        <h2 className="text-2xl font-bold mb-4">
-          AI Recommendations
-        </h2>
-
-        <ul className="space-y-3">
-          <li> Reduce unused subscriptions</li>
-          <li> Optimize API usage</li>
-          <li> Estimated savings ₹3500</li>
-        </ul>
-      </div>
-
     </div>
   );
 }
