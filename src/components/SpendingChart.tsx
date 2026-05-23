@@ -9,10 +9,9 @@ import {
 } from "recharts";
 
 const data = [
-  { name: "Food", value: 12000 },
-  { name: "Transport", value: 5000 },
-  { name: "Savings", value: 8500 },
-  { name: "Shopping", value: 6000 },
+  { name: "ChatGPT", value: 999 },
+  { name: "Claude", value: 1500 },
+  { name: "Cursor", value: 800 },
 ];
 
 const COLORS = ["#3B82F6", "#10B981", "#F59E0B", "#EF4444"];
@@ -21,7 +20,7 @@ export default function SpendingChart() {
   return (
     <div className="bg-white p-6 rounded-xl shadow mt-6">
       <h2 className="text-xl font-bold mb-4">
-        Spending Breakdown
+        AI Spend Breakdown
       </h2>
 
       <div className="h-[300px]">
