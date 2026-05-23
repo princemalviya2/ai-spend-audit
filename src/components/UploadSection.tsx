@@ -29,15 +29,15 @@ Recommendations:
   };
 
   return (
-    <div className="bg-white p-6 rounded-xl shadow">
+   <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
       <h2 className="text-xl font-bold mb-4">
         Upload Bank Statement
       </h2>
 
       <input
-        type="file"
-        className="border p-2 rounded w-full"
-      />
+ type="file"
+ className="border p-3 rounded w-full bg-gray-50"
+/>
 <select className="border p-2 rounded w-full mt-4">
   <option>ChatGPT</option>
   <option>Claude</option>
@@ -60,7 +60,7 @@ Recommendations:
 </select>
       <button
         onClick={handleAnalyze}
-        className="bg-blue-500 text-white px-4 py-2 rounded mt-4"
+      className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded mt-4 transition"
       >
         {loading ? "Analyzing..." : "Analyze Spending"}
       </button>
